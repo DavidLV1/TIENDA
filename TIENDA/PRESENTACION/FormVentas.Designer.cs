@@ -62,7 +62,6 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.ComprasTableAdapter = null;
-            this.tableAdapterManager.EmpleadosTableAdapter = null;
             this.tableAdapterManager.ProductosTableAdapter = null;
             this.tableAdapterManager.ReciboTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = TIENDA.PRODUCTOSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -71,6 +70,7 @@
             // ventasDataGridView
             // 
             this.ventasDataGridView.AutoGenerateColumns = false;
+            this.ventasDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ventasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ventasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -79,11 +79,11 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.ventasDataGridView.DataSource = this.ventasBindingSource;
-            this.ventasDataGridView.Location = new System.Drawing.Point(202, 111);
+            this.ventasDataGridView.Location = new System.Drawing.Point(82, 59);
             this.ventasDataGridView.Name = "ventasDataGridView";
             this.ventasDataGridView.RowHeadersWidth = 51;
             this.ventasDataGridView.RowTemplate.Height = 24;
-            this.ventasDataGridView.Size = new System.Drawing.Size(678, 358);
+            this.ventasDataGridView.Size = new System.Drawing.Size(917, 460);
             this.ventasDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -92,7 +92,6 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Codigo";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -100,7 +99,6 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -108,7 +106,6 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Marca";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -116,7 +113,6 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Precio";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 125;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -124,7 +120,6 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Cantidad";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 125;
             // 
             // FormVentas
             // 

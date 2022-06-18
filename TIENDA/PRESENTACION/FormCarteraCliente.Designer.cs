@@ -1,6 +1,6 @@
 ﻿namespace TIENDA.PRESENTACION
 {
-    partial class FormPagos
+    partial class FormCarteraCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,16 @@
         {
             this.SuspendLayout();
             // 
-            // FormPagos
+            // FormCarteraCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(15)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(1087, 581);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormPagos";
-            this.Text = "FormPagos";
+            this.Name = "FormCarteraCliente";
+            this.Text = "FormEmpleados";
+            this.Load += new System.EventHandler(this.FormCarteraCliente_Load);
             this.ResumeLayout(false);
 
         }

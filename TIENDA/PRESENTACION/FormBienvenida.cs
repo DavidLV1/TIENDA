@@ -17,7 +17,9 @@ namespace TIENDA.PRESENTACION
             InitializeComponent();
         }
 
-        int count = 0;
+        Form1 form = new Form1();
+
+        //int count = 0;
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -43,6 +45,7 @@ namespace TIENDA.PRESENTACION
             {
                 timer2.Stop();
                 this.Close();
+                form.Show();
             }
         }
 

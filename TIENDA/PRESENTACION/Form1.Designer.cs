@@ -37,23 +37,21 @@
             this.pLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pMenu = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPagos = new System.Windows.Forms.Button();
-            this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnEstadisticas = new System.Windows.Forms.Button();
             this.btnComprar = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
-            this.productosTableAdapter = new TIENDA.PRODUCTOSDataSetTableAdapters.ProductosTableAdapter();
-            this.tableAdapterManager = new TIENDA.PRODUCTOSDataSetTableAdapters.TableAdapterManager();
             this.pPrincipal = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productosTableAdapter = new TIENDA.PRODUCTOSDataSetTableAdapters.ProductosTableAdapter();
+            this.tableAdapterManager = new TIENDA.PRODUCTOSDataSetTableAdapters.TableAdapterManager();
             this.pBarra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRestaurar)).BeginInit();
@@ -162,30 +160,20 @@
             // pMenu
             // 
             this.pMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.pMenu.Controls.Add(this.panel12);
             this.pMenu.Controls.Add(this.panel10);
             this.pMenu.Controls.Add(this.panel8);
             this.pMenu.Controls.Add(this.panel6);
             this.pMenu.Controls.Add(this.panel4);
             this.pMenu.Controls.Add(this.panel2);
             this.pMenu.Controls.Add(this.btnPagos);
-            this.pMenu.Controls.Add(this.btnEmpleados);
             this.pMenu.Controls.Add(this.btnEstadisticas);
             this.pMenu.Controls.Add(this.btnComprar);
             this.pMenu.Controls.Add(this.btnVentas);
             this.pMenu.Controls.Add(this.btnProductos);
             this.pMenu.Location = new System.Drawing.Point(0, 180);
             this.pMenu.Name = "pMenu";
-            this.pMenu.Size = new System.Drawing.Size(173, 342);
+            this.pMenu.Size = new System.Drawing.Size(173, 287);
             this.pMenu.TabIndex = 1;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
-            this.panel12.Location = new System.Drawing.Point(3, 287);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(7, 50);
-            this.panel12.TabIndex = 2;
             // 
             // panel10
             // 
@@ -234,30 +222,14 @@
             this.btnPagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
             this.btnPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPagos.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnPagos.Location = new System.Drawing.Point(3, 287);
+            this.btnPagos.Location = new System.Drawing.Point(3, 231);
             this.btnPagos.Name = "btnPagos";
             this.btnPagos.Size = new System.Drawing.Size(167, 50);
             this.btnPagos.TabIndex = 0;
             this.btnPagos.Text = "CARTERA DE CLIENTE";
             this.btnPagos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPagos.UseVisualStyleBackColor = true;
-            this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);
-            // 
-            // btnEmpleados
-            // 
-            this.btnEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEmpleados.FlatAppearance.BorderSize = 0;
-            this.btnEmpleados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
-            this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpleados.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnEmpleados.Location = new System.Drawing.Point(3, 231);
-            this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Size = new System.Drawing.Size(167, 50);
-            this.btnEmpleados.TabIndex = 0;
-            this.btnEmpleados.Text = "EMPLEADOS";
-            this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEmpleados.UseVisualStyleBackColor = true;
-            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
+            this.btnPagos.Click += new System.EventHandler(this.btnCarteraCliente_Click);
             // 
             // btnEstadisticas
             // 
@@ -323,21 +295,6 @@
             this.btnProductos.UseVisualStyleBackColor = true;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
-            // productosTableAdapter
-            // 
-            this.productosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ComprasTableAdapter = null;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.EmpleadosTableAdapter = null;
-            this.tableAdapterManager.ProductosTableAdapter = null;
-            this.tableAdapterManager.ReciboTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = TIENDA.PRODUCTOSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.VentasTableAdapter = null;
-            // 
             // pPrincipal
             // 
             this.pPrincipal.Location = new System.Drawing.Point(176, 36);
@@ -355,12 +312,27 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
             this.button1.Image = global::TIENDA.Properties.Resources.imglogout1;
-            this.button1.Location = new System.Drawing.Point(42, 604);
+            this.button1.Location = new System.Drawing.Point(43, 593);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 40);
             this.button1.TabIndex = 3;
             this.button1.Text = "Logout";
             this.button1.UseVisualStyleBackColor = false;
+            // 
+            // productosTableAdapter
+            // 
+            this.productosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ComprasTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.ProductosTableAdapter = null;
+            this.tableAdapterManager.ReciboTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = TIENDA.PRODUCTOSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsuariosTableAdapter = null;
+            this.tableAdapterManager.VentasTableAdapter = null;
             // 
             // Form1
             // 
@@ -404,10 +376,8 @@
         private System.Windows.Forms.Panel pMenu;
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnProductos;
-        private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Button btnEstadisticas;
         private System.Windows.Forms.Button btnComprar;
-        private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel6;

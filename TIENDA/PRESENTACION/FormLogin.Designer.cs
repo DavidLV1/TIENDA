@@ -29,17 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pbNombreLogo = new System.Windows.Forms.PictureBox();
+            this.pbImagenLogo = new System.Windows.Forms.PictureBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAcceder = new System.Windows.Forms.Button();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
+            this.lblNombreUsuario = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblMensajeError = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNombreLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
             this.SuspendLayout();
@@ -47,25 +50,44 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(15)))), ((int)(((byte)(80)))));
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pbNombreLogo);
+            this.panel1.Controls.Add(this.pbImagenLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(195, 330);
             this.panel1.TabIndex = 0;
             // 
-            // textBox1
+            // pbNombreLogo
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(70)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.DarkGray;
-            this.textBox1.Location = new System.Drawing.Point(315, 126);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(287, 23);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Usuario";
+            this.pbNombreLogo.Image = global::TIENDA.Properties.Resources.Mi_proyecto__2_;
+            this.pbNombreLogo.Location = new System.Drawing.Point(12, 200);
+            this.pbNombreLogo.Name = "pbNombreLogo";
+            this.pbNombreLogo.Size = new System.Drawing.Size(168, 69);
+            this.pbNombreLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbNombreLogo.TabIndex = 1;
+            this.pbNombreLogo.TabStop = false;
+            // 
+            // pbImagenLogo
+            // 
+            this.pbImagenLogo.Image = global::TIENDA.Properties.Resources.My_project;
+            this.pbImagenLogo.Location = new System.Drawing.Point(12, 52);
+            this.pbImagenLogo.Name = "pbImagenLogo";
+            this.pbImagenLogo.Size = new System.Drawing.Size(168, 142);
+            this.pbImagenLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagenLogo.TabIndex = 0;
+            this.pbImagenLogo.TabStop = false;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(70)))));
+            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.ForeColor = System.Drawing.Color.DarkGray;
+            this.txtUsuario.Location = new System.Drawing.Point(393, 124);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(223, 23);
+            this.txtUsuario.TabIndex = 1;
             // 
             // lblLogin
             // 
@@ -78,50 +100,31 @@
             this.lblLogin.TabIndex = 2;
             this.lblLogin.Text = "LOGIN";
             // 
-            // button1
+            // btnAcceder
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(30)))), ((int)(((byte)(80)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.DarkGray;
-            this.button1.Location = new System.Drawing.Point(405, 253);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 32);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Acceder";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAcceder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(30)))), ((int)(((byte)(80)))));
+            this.btnAcceder.FlatAppearance.BorderSize = 0;
+            this.btnAcceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcceder.ForeColor = System.Drawing.Color.DarkGray;
+            this.btnAcceder.Location = new System.Drawing.Point(405, 253);
+            this.btnAcceder.Name = "btnAcceder";
+            this.btnAcceder.Size = new System.Drawing.Size(107, 32);
+            this.btnAcceder.TabIndex = 3;
+            this.btnAcceder.Text = "Acceder";
+            this.btnAcceder.UseVisualStyleBackColor = false;
+            this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
             // 
-            // textBox2
+            // txtContraseña
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(70)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.DarkGray;
-            this.textBox2.Location = new System.Drawing.Point(315, 179);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(287, 23);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "Contraseña";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::TIENDA.Properties.Resources.Mi_proyecto__2_;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 200);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(168, 69);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TIENDA.Properties.Resources.My_project;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 52);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(168, 142);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(70)))));
+            this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContraseña.ForeColor = System.Drawing.Color.DarkGray;
+            this.txtContraseña.Location = new System.Drawing.Point(393, 177);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
+            this.txtContraseña.Size = new System.Drawing.Size(223, 23);
+            this.txtContraseña.TabIndex = 1;
             // 
             // pbCerrar
             // 
@@ -153,18 +156,53 @@
             this.pbMinimizar.MouseEnter += new System.EventHandler(this.pbMinimizar_MouseEnter);
             this.pbMinimizar.MouseLeave += new System.EventHandler(this.pbMinimizar_MouseLeave);
             // 
+            // lblNombreUsuario
+            // 
+            this.lblNombreUsuario.AutoSize = true;
+            this.lblNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreUsuario.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblNombreUsuario.Location = new System.Drawing.Point(308, 127);
+            this.lblNombreUsuario.Name = "lblNombreUsuario";
+            this.lblNombreUsuario.Size = new System.Drawing.Size(72, 20);
+            this.lblNombreUsuario.TabIndex = 6;
+            this.lblNombreUsuario.Text = "Usuario:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkGray;
+            this.label2.Location = new System.Drawing.Point(280, 180);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Contraseña:";
+            // 
+            // lblMensajeError
+            // 
+            this.lblMensajeError.AutoSize = true;
+            this.lblMensajeError.ForeColor = System.Drawing.Color.Red;
+            this.lblMensajeError.Location = new System.Drawing.Point(318, 223);
+            this.lblMensajeError.Name = "lblMensajeError";
+            this.lblMensajeError.Size = new System.Drawing.Size(36, 16);
+            this.lblMensajeError.TabIndex = 7;
+            this.lblMensajeError.Text = "Error";
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(10)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(700, 330);
+            this.Controls.Add(this.lblMensajeError);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblNombreUsuario);
             this.Controls.Add(this.pbMinimizar);
             this.Controls.Add(this.pbCerrar);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAcceder);
             this.Controls.Add(this.lblLogin);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtContraseña);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLogin";
@@ -173,8 +211,8 @@
             this.Text = "FormLogin";
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNombreLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
             this.ResumeLayout(false);
@@ -185,13 +223,16 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label lblLogin;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnAcceder;
+        private System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.PictureBox pbImagenLogo;
+        private System.Windows.Forms.PictureBox pbNombreLogo;
         private System.Windows.Forms.PictureBox pbCerrar;
         private System.Windows.Forms.PictureBox pbMinimizar;
+        private System.Windows.Forms.Label lblNombreUsuario;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblMensajeError;
     }
 }

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace TIENDA.PRESENTACION
 {
-    public partial class FormPagos : Form
+    public partial class FormCarteraCliente : Form
     {
-        public FormPagos()
+        public FormCarteraCliente()
         {
             InitializeComponent();
+        }
+
+        private void FormCarteraCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

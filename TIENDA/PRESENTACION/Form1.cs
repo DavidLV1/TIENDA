@@ -134,14 +134,9 @@ namespace TIENDA
             loadForm(new FormEstadisticas());
         }
 
-        private void btnEmpleados_Click(object sender, EventArgs e)
+        private void btnCarteraCliente_Click(object sender, EventArgs e)
         {
-            loadForm(new FormEmpleados());
-        }
-
-        private void btnPagos_Click(object sender, EventArgs e)
-        {
-            loadForm(new FormPagos());
+            loadForm(new FormCarteraCliente());
         }
     }
 }

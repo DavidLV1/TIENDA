@@ -65,7 +65,7 @@
             // 
             lblCodigo.AutoSize = true;
             lblCodigo.ForeColor = System.Drawing.SystemColors.Control;
-            lblCodigo.Location = new System.Drawing.Point(42, 153);
+            lblCodigo.Location = new System.Drawing.Point(34, 155);
             lblCodigo.Name = "lblCodigo";
             lblCodigo.Size = new System.Drawing.Size(54, 16);
             lblCodigo.TabIndex = 1;
@@ -75,7 +75,7 @@
             // 
             lblNombre.AutoSize = true;
             lblNombre.ForeColor = System.Drawing.SystemColors.Control;
-            lblNombre.Location = new System.Drawing.Point(42, 181);
+            lblNombre.Location = new System.Drawing.Point(34, 183);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new System.Drawing.Size(59, 16);
             lblNombre.TabIndex = 3;
@@ -85,7 +85,7 @@
             // 
             lblMarca.AutoSize = true;
             lblMarca.ForeColor = System.Drawing.SystemColors.Control;
-            lblMarca.Location = new System.Drawing.Point(42, 209);
+            lblMarca.Location = new System.Drawing.Point(34, 211);
             lblMarca.Name = "lblMarca";
             lblMarca.Size = new System.Drawing.Size(48, 16);
             lblMarca.TabIndex = 5;
@@ -95,7 +95,7 @@
             // 
             lblPreciodeCompra.AutoSize = true;
             lblPreciodeCompra.ForeColor = System.Drawing.SystemColors.Control;
-            lblPreciodeCompra.Location = new System.Drawing.Point(42, 237);
+            lblPreciodeCompra.Location = new System.Drawing.Point(34, 239);
             lblPreciodeCompra.Name = "lblPreciodeCompra";
             lblPreciodeCompra.Size = new System.Drawing.Size(119, 16);
             lblPreciodeCompra.TabIndex = 7;
@@ -105,7 +105,7 @@
             // 
             lblCantidad.AutoSize = true;
             lblCantidad.ForeColor = System.Drawing.SystemColors.Control;
-            lblCantidad.Location = new System.Drawing.Point(42, 265);
+            lblCantidad.Location = new System.Drawing.Point(34, 267);
             lblCantidad.Name = "lblCantidad";
             lblCantidad.Size = new System.Drawing.Size(64, 16);
             lblCantidad.TabIndex = 9;
@@ -129,7 +129,6 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.ComprasTableAdapter = this.comprasTableAdapter;
-            this.tableAdapterManager.EmpleadosTableAdapter = null;
             this.tableAdapterManager.ProductosTableAdapter = null;
             this.tableAdapterManager.ReciboTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = TIENDA.PRODUCTOSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -138,6 +137,7 @@
             // DGVCompras
             // 
             this.DGVCompras.AutoGenerateColumns = false;
+            this.DGVCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -146,11 +146,11 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.DGVCompras.DataSource = this.comprasBindingSource;
-            this.DGVCompras.Location = new System.Drawing.Point(297, 103);
+            this.DGVCompras.Location = new System.Drawing.Point(276, 111);
             this.DGVCompras.Name = "DGVCompras";
             this.DGVCompras.RowHeadersWidth = 51;
             this.DGVCompras.RowTemplate.Height = 24;
-            this.DGVCompras.Size = new System.Drawing.Size(748, 362);
+            this.DGVCompras.Size = new System.Drawing.Size(778, 362);
             this.DGVCompras.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -159,7 +159,6 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Codigo";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -167,7 +166,6 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -175,7 +173,6 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Marca";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -183,7 +180,6 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Precio de Compra";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 125;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -191,12 +187,11 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Cantidad";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 125;
             // 
             // txtCodigo
             // 
             this.txtCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.comprasBindingSource, "Codigo", true));
-            this.txtCodigo.Location = new System.Drawing.Point(167, 150);
+            this.txtCodigo.Location = new System.Drawing.Point(159, 152);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 22);
             this.txtCodigo.TabIndex = 2;
@@ -204,7 +199,7 @@
             // txtNombre
             // 
             this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.comprasBindingSource, "Nombre", true));
-            this.txtNombre.Location = new System.Drawing.Point(167, 178);
+            this.txtNombre.Location = new System.Drawing.Point(159, 180);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 22);
             this.txtNombre.TabIndex = 4;
@@ -212,7 +207,7 @@
             // txtMarca
             // 
             this.txtMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.comprasBindingSource, "Marca", true));
-            this.txtMarca.Location = new System.Drawing.Point(167, 206);
+            this.txtMarca.Location = new System.Drawing.Point(159, 208);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(100, 22);
             this.txtMarca.TabIndex = 6;
@@ -220,7 +215,7 @@
             // txtPreciodeCompra
             // 
             this.txtPreciodeCompra.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.comprasBindingSource, "Precio de Compra", true));
-            this.txtPreciodeCompra.Location = new System.Drawing.Point(167, 234);
+            this.txtPreciodeCompra.Location = new System.Drawing.Point(159, 236);
             this.txtPreciodeCompra.Name = "txtPreciodeCompra";
             this.txtPreciodeCompra.Size = new System.Drawing.Size(100, 22);
             this.txtPreciodeCompra.TabIndex = 8;
@@ -228,7 +223,7 @@
             // txtCantidad
             // 
             this.txtCantidad.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.comprasBindingSource, "Cantidad", true));
-            this.txtCantidad.Location = new System.Drawing.Point(167, 262);
+            this.txtCantidad.Location = new System.Drawing.Point(159, 264);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 22);
             this.txtCantidad.TabIndex = 10;
@@ -240,7 +235,7 @@
             this.btnActualizar.FlatAppearance.BorderSize = 2;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnActualizar.Location = new System.Drawing.Point(167, 324);
+            this.btnActualizar.Location = new System.Drawing.Point(159, 326);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(87, 29);
             this.btnActualizar.TabIndex = 14;
@@ -254,7 +249,7 @@
             this.btnAgregar.FlatAppearance.BorderSize = 2;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAgregar.Location = new System.Drawing.Point(58, 324);
+            this.btnAgregar.Location = new System.Drawing.Point(50, 326);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(81, 29);
             this.btnAgregar.TabIndex = 15;
