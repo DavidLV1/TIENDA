@@ -83,6 +83,10 @@ namespace TIENDA.PRESENTACION
                     catch
                     {
                         msjError("Usuario o Contraseña incorrectos");
+
+                        txtUsuario.Clear();
+                        txtContraseña.Clear();
+                        Conect.Close();
                     }
                 }
 

@@ -138,5 +138,12 @@ namespace TIENDA
         {
             loadForm(new FormCarteraCliente());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormLogin Login = new FormLogin();
+            Login.Show();
+        }
     }
 }
