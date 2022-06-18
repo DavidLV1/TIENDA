@@ -50,7 +50,6 @@
             this.pPrincipal = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productosTableAdapter = new TIENDA.PRODUCTOSDataSetTableAdapters.ProductosTableAdapter();
             this.tableAdapterManager = new TIENDA.PRODUCTOSDataSetTableAdapters.TableAdapterManager();
             this.pBarra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
@@ -320,10 +319,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // productosTableAdapter
-            // 
-            this.productosTableAdapter.ClearBeforeFill = true;
-            // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
@@ -384,7 +379,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.BindingSource productosBindingSource;
-        private PRODUCTOSDataSetTableAdapters.ProductosTableAdapter productosTableAdapter;
         private PRODUCTOSDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Panel pPrincipal;
         private System.Windows.Forms.Button btnPagos;

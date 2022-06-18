@@ -36,15 +36,6 @@
             System.Windows.Forms.Label lblCantidad;
             System.Windows.Forms.Label lblCategoria;
             System.Windows.Forms.Label lblCodigo2;
-            this.DGVProductos = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pRODUCTOSDataSet = new TIENDA.PRODUCTOSDataSet();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtMarca = new System.Windows.Forms.TextBox();
@@ -55,11 +46,20 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblCodigo3 = new System.Windows.Forms.Label();
-            this.productosTableAdapter = new TIENDA.PRODUCTOSDataSetTableAdapters.ProductosTableAdapter();
-            this.tableAdapterManager = new TIENDA.PRODUCTOSDataSetTableAdapters.TableAdapterManager();
             this.button1 = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.pRODUCTOSDataSet = new TIENDA.PRODUCTOSDataSet();
+            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productosTableAdapter = new TIENDA.PRODUCTOSDataSetTableAdapters.ProductosTableAdapter();
+            this.tableAdapterManager = new TIENDA.PRODUCTOSDataSetTableAdapters.TableAdapterManager();
+            this.productosDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             lblCodigo = new System.Windows.Forms.Label();
             lblNombre = new System.Windows.Forms.Label();
             lblMarca = new System.Windows.Forms.Label();
@@ -67,9 +67,9 @@
             lblCantidad = new System.Windows.Forms.Label();
             lblCategoria = new System.Windows.Forms.Label();
             lblCodigo2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVProductos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUCTOSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -142,90 +142,8 @@
             lblCodigo2.TabIndex = 16;
             lblCodigo2.Text = "Codigo:";
             // 
-            // DGVProductos
-            // 
-            this.DGVProductos.AllowUserToDeleteRows = false;
-            this.DGVProductos.AutoGenerateColumns = false;
-            this.DGVProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DGVProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.DGVProductos.DataSource = this.productosBindingSource;
-            this.DGVProductos.Location = new System.Drawing.Point(237, 94);
-            this.DGVProductos.Name = "DGVProductos";
-            this.DGVProductos.ReadOnly = true;
-            this.DGVProductos.RowHeadersWidth = 51;
-            this.DGVProductos.RowTemplate.Height = 24;
-            this.DGVProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVProductos.Size = new System.Drawing.Size(803, 387);
-            this.DGVProductos.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Codigo";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Codigo";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Marca";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Marca";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Precio";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Precio";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Cantidad";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Cantidad";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Categoria";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Categoria";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // productosBindingSource
-            // 
-            this.productosBindingSource.DataMember = "Productos";
-            this.productosBindingSource.DataSource = this.pRODUCTOSDataSet;
-            // 
-            // pRODUCTOSDataSet
-            // 
-            this.pRODUCTOSDataSet.DataSetName = "PRODUCTOSDataSet";
-            this.pRODUCTOSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // txtCodigo
             // 
-            this.txtCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "Codigo", true));
             this.txtCodigo.Location = new System.Drawing.Point(115, 114);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 22);
@@ -233,7 +151,6 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "Nombre", true));
             this.txtNombre.Location = new System.Drawing.Point(115, 142);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 22);
@@ -241,7 +158,6 @@
             // 
             // txtMarca
             // 
-            this.txtMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "Marca", true));
             this.txtMarca.Location = new System.Drawing.Point(115, 170);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(100, 22);
@@ -249,7 +165,6 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "Precio", true));
             this.txtPrecio.Location = new System.Drawing.Point(115, 198);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 22);
@@ -257,7 +172,6 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "Cantidad", true));
             this.txtCantidad.Location = new System.Drawing.Point(115, 226);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 22);
@@ -265,7 +179,6 @@
             // 
             // txtCategoria
             // 
-            this.txtCategoria.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "Categoria", true));
             this.txtCategoria.Location = new System.Drawing.Point(115, 254);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(100, 22);
@@ -318,25 +231,11 @@
             // 
             // lblCodigo3
             // 
-            this.lblCodigo3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "Codigo", true));
             this.lblCodigo3.ForeColor = System.Drawing.SystemColors.Control;
             this.lblCodigo3.Location = new System.Drawing.Point(91, 458);
             this.lblCodigo3.Name = "lblCodigo3";
             this.lblCodigo3.Size = new System.Drawing.Size(66, 23);
             this.lblCodigo3.TabIndex = 17;
-            // 
-            // productosTableAdapter
-            // 
-            this.productosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ComprasTableAdapter = null;
-            this.tableAdapterManager.ProductosTableAdapter = this.productosTableAdapter;
-            this.tableAdapterManager.ReciboTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = TIENDA.PRODUCTOSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.VentasTableAdapter = null;
             // 
             // button1
             // 
@@ -383,12 +282,103 @@
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
+            // pRODUCTOSDataSet
+            // 
+            this.pRODUCTOSDataSet.DataSetName = "PRODUCTOSDataSet";
+            this.pRODUCTOSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productosBindingSource
+            // 
+            this.productosBindingSource.DataMember = "Productos";
+            this.productosBindingSource.DataSource = this.pRODUCTOSDataSet;
+            // 
+            // productosTableAdapter
+            // 
+            this.productosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ComprasTableAdapter = null;
+            this.tableAdapterManager.ProductosTableAdapter = this.productosTableAdapter;
+            this.tableAdapterManager.ReciboTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = TIENDA.PRODUCTOSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.VentasTableAdapter = null;
+            // 
+            // productosDataGridView
+            // 
+            this.productosDataGridView.AutoGenerateColumns = false;
+            this.productosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
+            this.productosDataGridView.DataSource = this.productosBindingSource;
+            this.productosDataGridView.Location = new System.Drawing.Point(237, 49);
+            this.productosDataGridView.Name = "productosDataGridView";
+            this.productosDataGridView.RowHeadersWidth = 51;
+            this.productosDataGridView.RowTemplate.Height = 24;
+            this.productosDataGridView.Size = new System.Drawing.Size(802, 471);
+            this.productosDataGridView.TabIndex = 21;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Codigo";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Codigo";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Nombre del Producto";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Nombre del Producto";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Marca";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Marca";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Precio";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Precio";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Cantidad";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Cantidad";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Categoria";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Categoria";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 125;
+            // 
             // FormProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(15)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(1069, 574);
+            this.Controls.Add(this.productosDataGridView);
             this.Controls.Add(lblCodigo2);
             this.Controls.Add(this.lblCodigo3);
             this.Controls.Add(this.btnEliminar);
@@ -409,33 +399,21 @@
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(lblCategoria);
             this.Controls.Add(this.txtCategoria);
-            this.Controls.Add(this.DGVProductos);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormProductos";
             this.Text = "FormProductos";
             this.Load += new System.EventHandler(this.FormProductos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DGVProductos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUCTOSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private PRODUCTOSDataSet pRODUCTOSDataSet;
-        private System.Windows.Forms.BindingSource productosBindingSource;
-        private PRODUCTOSDataSetTableAdapters.ProductosTableAdapter productosTableAdapter;
-        private PRODUCTOSDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView DGVProductos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtMarca;
@@ -449,5 +427,16 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnActualizar;
+        private PRODUCTOSDataSet pRODUCTOSDataSet;
+        private System.Windows.Forms.BindingSource productosBindingSource;
+        private PRODUCTOSDataSetTableAdapters.ProductosTableAdapter productosTableAdapter;
+        private PRODUCTOSDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView productosDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
 }

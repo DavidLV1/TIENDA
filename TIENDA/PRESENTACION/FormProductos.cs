@@ -114,5 +114,13 @@ namespace TIENDA
             // TODO: esta línea de código carga datos en la tabla 'pRODUCTOSDataSet.Productos' Puede moverla o quitarla según sea necesario.
             this.productosTableAdapter.Fill(this.pRODUCTOSDataSet.Productos);
         }
+
+        private void productosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.productosBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.pRODUCTOSDataSet);
+
+        }
     }
 }
