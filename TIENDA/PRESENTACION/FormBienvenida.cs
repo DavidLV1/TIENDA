@@ -12,12 +12,15 @@ namespace TIENDA.PRESENTACION
 {
     public partial class FormBienvenida : Form
     {
-        public FormBienvenida()
+        Form form;
+        public FormBienvenida(object f)
         {
             InitializeComponent();
+
+            form = f as Form;
         }
 
-        Form1 form = new Form1();
+        //public Form1 form = new Form1();
 
         //int count = 0;
 
