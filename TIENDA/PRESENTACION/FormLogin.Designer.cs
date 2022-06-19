@@ -31,15 +31,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pbNombreLogo = new System.Windows.Forms.PictureBox();
             this.pbImagenLogo = new System.Windows.Forms.PictureBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.btnAcceder = new System.Windows.Forms.Button();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblMensajeError = new System.Windows.Forms.Label();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNombreLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenLogo)).BeginInit();
@@ -78,17 +78,6 @@
             this.pbImagenLogo.TabIndex = 0;
             this.pbImagenLogo.TabStop = false;
             // 
-            // txtUsuario
-            // 
-            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(70)))));
-            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtUsuario.Location = new System.Drawing.Point(393, 124);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(223, 23);
-            this.txtUsuario.TabIndex = 1;
-            // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
@@ -113,18 +102,6 @@
             this.btnAcceder.Text = "Acceder";
             this.btnAcceder.UseVisualStyleBackColor = false;
             this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
-            // 
-            // txtContraseña
-            // 
-            this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(70)))));
-            this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtContraseña.Location = new System.Drawing.Point(393, 177);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.PasswordChar = '*';
-            this.txtContraseña.Size = new System.Drawing.Size(223, 23);
-            this.txtContraseña.TabIndex = 1;
             // 
             // pbCerrar
             // 
@@ -188,6 +165,29 @@
             this.lblMensajeError.TabIndex = 7;
             this.lblMensajeError.Text = "Error";
             // 
+            // txtContraseña
+            // 
+            this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(70)))));
+            this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContraseña.ForeColor = System.Drawing.Color.LightGray;
+            this.txtContraseña.Location = new System.Drawing.Point(393, 177);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
+            this.txtContraseña.Size = new System.Drawing.Size(223, 23);
+            this.txtContraseña.TabIndex = 1;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(70)))));
+            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.ForeColor = System.Drawing.Color.LightGray;
+            this.txtUsuario.Location = new System.Drawing.Point(393, 124);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(223, 23);
+            this.txtUsuario.TabIndex = 1;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -201,8 +201,8 @@
             this.Controls.Add(this.pbCerrar);
             this.Controls.Add(this.btnAcceder);
             this.Controls.Add(this.lblLogin);
-            this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLogin";
@@ -223,10 +223,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Button btnAcceder;
-        private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.PictureBox pbImagenLogo;
         private System.Windows.Forms.PictureBox pbNombreLogo;
         private System.Windows.Forms.PictureBox pbCerrar;
@@ -234,5 +232,7 @@
         private System.Windows.Forms.Label lblNombreUsuario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblMensajeError;
+        private System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.TextBox txtUsuario;
     }
 }

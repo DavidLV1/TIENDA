@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DATOS\PRODUCTO.cs" />
+    <Compile Include="LOGICA\ConectarBase.cs" />
     <Compile Include="LOGICA\FABRICA.cs" />
     <Compile Include="PRESENTACION\Form1.cs">
       <SubType>Form</SubType>

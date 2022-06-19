@@ -20,8 +20,6 @@ namespace TIENDA.PRESENTACION
             InitializeComponent();
         }
 
-        FormBienvenida Bienvenida = new FormBienvenida();
-
         SqlConnection Conect = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
 
         private void FormLogin_Load(object sender, EventArgs e)
@@ -60,28 +58,31 @@ namespace TIENDA.PRESENTACION
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
+
+            Form1 form = new Form1();
+
+            FormBienvenida Bienvenida = new FormBienvenida(form);
+
             if(txtUsuario.Text != string.Empty)
             {
                 if(txtContraseña.Text != string.Empty)
                 {
-                    try
+                    Conect.Open();
+                    SqlCommand comando = new SqlCommand("SELECT Usuario, Contraseña FROM Usuarios WHERE Usuario = @vusuario AND Contraseña = @vcontraseña", Conect);
+                    comando.Parameters.AddWithValue("@vusuario", txtUsuario.Text);
+                    comando.Parameters.AddWithValue("@vcontraseña", txtContraseña.Text);
+
+                    SqlDataReader lector = comando.ExecuteReader();
+
+                    if (lector.Read())
                     {
-                        Conect.Open();
-                        SqlCommand comando = new SqlCommand("SELECT Usuario, Contraseña FROM Usuarios WHERE Usuario = @vusuario AND Contraseña = @vcontraseña", Conect);
-                        comando.Parameters.AddWithValue("@vusuario", txtUsuario.Text);
-                        comando.Parameters.AddWithValue("@vcontraseña", txtContraseña.Text);
-
-                        SqlDataReader lector = comando.ExecuteReader();
-
-                        if (lector.Read())
-                        {
-                            Conect.Close();
-                            this.Hide();
-                            Bienvenida.Show();
-                        }
+                        Conect.Close();
+                        this.Hide();
+                        Bienvenida.Show();
+                        form.FormClosed += Logout;
                     }
 
-                    catch
+                    else
                     {
                         msjError("Usuario o Contraseña incorrectos");
 
@@ -107,6 +108,14 @@ namespace TIENDA.PRESENTACION
         {
             lblMensajeError.Text = "   " + msj;
             lblMensajeError.Visible = true;
+        }
+
+        public void Logout(object sender, FormClosedEventArgs e)
+        {
+            txtUsuario.Clear();
+            txtContraseña.Clear();
+            lblMensajeError.Visible = false;
+            this.Show();
         }
     }
 }
