@@ -55,5 +55,10 @@ namespace TIENDA.PRESENTACION
             this.Opacity = 0.0;
             timer1.Start();
         }
+
+        private void lblNombreUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
