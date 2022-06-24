@@ -34,7 +34,7 @@ namespace TIENDA
                 PRODUCTO p = new PRODUCTO(); //de la Interfaz a la Memoria
 
                 p.Codigo = int.Parse(txtCodigo.Text);
-                p.Nombre = txtNombre.Text;
+                p.Nombre = txtNombreProducto.Text;
                 p.Marca = txtMarca.Text;
                 p.Precio = decimal.Parse(txtPrecio.Text);
                 p.Cantidad = int.Parse(txtCantidad.Text);
@@ -42,8 +42,6 @@ namespace TIENDA
                 //p.Caducidad = dTPCaducidad.Value.ToString();
 
                 F.setProducto(p);
-
-
 
                 productosTableAdapter.Insertar(p.Codigo, p.Nombre, p.Marca, p.Precio, p.Cantidad, p.Categoria);
                 MessageBox.Show("Se agrego un nuevo Producto", "Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -65,7 +63,7 @@ namespace TIENDA
                 PRODUCTO p = new PRODUCTO(); //de la Interfaz a la Memoria
 
                 p.Codigo = int.Parse(txtCodigo.Text);
-                p.Nombre = txtNombre.Text;
+                p.Nombre = txtNombreProducto.Text;
                 p.Marca = txtMarca.Text;
                 p.Precio = decimal.Parse(txtPrecio.Text);
                 p.Cantidad = int.Parse(txtCantidad.Text);
@@ -101,7 +99,7 @@ namespace TIENDA
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             txtCodigo.Clear();
-            txtNombre.Clear();
+            txtNombreProducto.Clear();
             txtMarca.Clear();
             txtPrecio.Clear();
             txtCantidad.Clear();
