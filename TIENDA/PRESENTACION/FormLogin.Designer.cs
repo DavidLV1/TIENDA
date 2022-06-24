@@ -57,6 +57,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(195, 330);
             this.panel1.TabIndex = 0;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormLogin_MouseDown);
             // 
             // pbNombreLogo
             // 
@@ -67,6 +68,7 @@
             this.pbNombreLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbNombreLogo.TabIndex = 1;
             this.pbNombreLogo.TabStop = false;
+            this.pbNombreLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormLogin_MouseDown);
             // 
             // pbImagenLogo
             // 
@@ -77,6 +79,7 @@
             this.pbImagenLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagenLogo.TabIndex = 0;
             this.pbImagenLogo.TabStop = false;
+            this.pbImagenLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormLogin_MouseDown);
             // 
             // lblLogin
             // 
@@ -88,6 +91,7 @@
             this.lblLogin.Size = new System.Drawing.Size(87, 29);
             this.lblLogin.TabIndex = 2;
             this.lblLogin.Text = "LOGIN";
+            this.lblLogin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormLogin_MouseDown);
             // 
             // btnAcceder
             // 
@@ -143,6 +147,7 @@
             this.lblNombreUsuario.Size = new System.Drawing.Size(72, 20);
             this.lblNombreUsuario.TabIndex = 6;
             this.lblNombreUsuario.Text = "Usuario:";
+            this.lblNombreUsuario.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormLogin_MouseDown);
             // 
             // label2
             // 
@@ -154,6 +159,7 @@
             this.label2.Size = new System.Drawing.Size(100, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "Contraseña:";
+            this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormLogin_MouseDown);
             // 
             // lblMensajeError
             // 
@@ -210,6 +216,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLogin";
             this.Load += new System.EventHandler(this.FormLogin_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormLogin_MouseDown);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbNombreLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenLogo)).EndInit();

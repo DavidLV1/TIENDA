@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pBarra = new System.Windows.Forms.Panel();
+            this.pBarraTitulo = new System.Windows.Forms.Panel();
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.pbRestaurar = new System.Windows.Forms.PictureBox();
             this.pbMaximizar = new System.Windows.Forms.PictureBox();
@@ -51,7 +51,7 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new TIENDA.PRODUCTOSDataSetTableAdapters.TableAdapterManager();
-            this.pBarra.SuspendLayout();
+            this.pBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMaximizar)).BeginInit();
@@ -62,20 +62,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // pBarra
+            // pBarraTitulo
             // 
-            this.pBarra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pBarraTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(5)))), ((int)(((byte)(50)))));
-            this.pBarra.Controls.Add(this.pbMinimizar);
-            this.pBarra.Controls.Add(this.pbRestaurar);
-            this.pBarra.Controls.Add(this.pbMaximizar);
-            this.pBarra.Controls.Add(this.pbCerrar);
-            this.pBarra.Location = new System.Drawing.Point(0, 0);
-            this.pBarra.Name = "pBarra";
-            this.pBarra.Size = new System.Drawing.Size(1262, 35);
-            this.pBarra.TabIndex = 0;
-            this.pBarra.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.pBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(5)))), ((int)(((byte)(50)))));
+            this.pBarraTitulo.Controls.Add(this.pbMinimizar);
+            this.pBarraTitulo.Controls.Add(this.pbRestaurar);
+            this.pBarraTitulo.Controls.Add(this.pbMaximizar);
+            this.pBarraTitulo.Controls.Add(this.pbCerrar);
+            this.pBarraTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pBarraTitulo.Name = "pBarraTitulo";
+            this.pBarraTitulo.Size = new System.Drawing.Size(1262, 35);
+            this.pBarraTitulo.TabIndex = 0;
+            this.pBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBarraTitulo_MouseDown);
             // 
             // pbMinimizar
             // 
@@ -339,14 +339,14 @@
             this.Controls.Add(this.pPrincipal);
             this.Controls.Add(this.pMenu);
             this.Controls.Add(this.pLogo);
-            this.Controls.Add(this.pBarra);
+            this.Controls.Add(this.pBarraTitulo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.pBarra.ResumeLayout(false);
+            this.pBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMaximizar)).EndInit();
@@ -361,7 +361,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pBarra;
+        private System.Windows.Forms.Panel pBarraTitulo;
         private System.Windows.Forms.PictureBox pbCerrar;
         private System.Windows.Forms.PictureBox pbMinimizar;
         private System.Windows.Forms.PictureBox pbMaximizar;

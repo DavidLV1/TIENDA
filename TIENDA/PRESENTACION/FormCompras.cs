@@ -49,6 +49,11 @@ namespace TIENDA.PRESENTACION
                 p.Cantidad = int.Parse(txtCantidad.Text);
 
                 comprasTableAdapter.InsertarCompras(p.Codigo, p.Nombre, p.Marca, p.PrecioCompra, p.Cantidad);
+                PRODUCTOSDataSetTableAdapters.ProductosTableAdapter productosTableAdapter = new PRODUCTOSDataSetTableAdapters.ProductosTableAdapter();
+                productosTableAdapter.Connection.Open();
+                productosTableAdapter.ActualizarCantidad(p.Cantidad,p.Codigo);
+                productosTableAdapter.Fill(pRODUCTOSDataSet.Productos);
+                productosTableAdapter.Connection.Close();
                 // TODO: esta línea de código carga datos en la tabla 'pRODUCTOSDataSet.Compras' Puede moverla o quitarla según sea necesario.
                 this.comprasTableAdapter.Fill(this.pRODUCTOSDataSet.Compras);
             }

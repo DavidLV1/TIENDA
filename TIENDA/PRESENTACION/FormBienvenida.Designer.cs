@@ -50,7 +50,6 @@
             this.lblNombreUsuario.Size = new System.Drawing.Size(111, 29);
             this.lblNombreUsuario.TabIndex = 0;
             this.lblNombreUsuario.Text = "Usuario";
-            this.lblNombreUsuario.Click += new System.EventHandler(this.lblNombreUsuario_Click);
             // 
             // lblBienvenida
             // 
