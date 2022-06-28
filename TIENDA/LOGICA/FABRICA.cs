@@ -18,12 +18,5 @@ namespace TIENDA.LOGICA
         {
             Productos.Add(producto);
         }
-
-        private void ActualizarProductos(int cantidad, int codigo)
-        {
-            PRODUCTOSDataSetTableAdapters.ProductosTableAdapter productosTableAdapter = new PRODUCTOSDataSetTableAdapters.ProductosTableAdapter();
-            
-            productosTableAdapter.ActualizarCantidad(cantidad, codigo);
-        }
     }
 }
