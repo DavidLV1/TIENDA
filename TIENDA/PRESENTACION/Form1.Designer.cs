@@ -298,7 +298,7 @@
             // 
             this.pPrincipal.Location = new System.Drawing.Point(176, 36);
             this.pPrincipal.Name = "pPrincipal";
-            this.pPrincipal.Size = new System.Drawing.Size(1085, 620);
+            this.pPrincipal.Size = new System.Drawing.Size(1085, 618);
             this.pPrincipal.TabIndex = 2;
             // 
             // btnLogout
@@ -326,6 +326,7 @@
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.ProductosTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = TIENDA.PRODUCTOSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsuariosTableAdapter = null;
             this.tableAdapterManager.VentasTableAdapter = null;
             // 
             // Form1
