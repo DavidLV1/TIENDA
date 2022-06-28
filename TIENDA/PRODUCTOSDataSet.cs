@@ -4,6 +4,10 @@
 
     partial class PRODUCTOSDataSet
     {
+        partial class VentasDataTable
+        {
+        }
+
         partial class ComprasDataTable
         {
         }

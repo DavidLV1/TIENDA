@@ -8,7 +8,7 @@ using TIENDA.DATOS;
 
 namespace TIENDA.LOGICA
 {
-    internal class FABRICA
+    internal class LISTAS
     {
         //SE CREA UNA LISTA PARA ALMACENAR CADA PRODUCTO
         List<PRODUCTO> Productos = new List<PRODUCTO>();

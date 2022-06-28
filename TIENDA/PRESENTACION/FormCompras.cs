@@ -16,82 +16,81 @@ namespace TIENDA.PRESENTACION
 {
     public partial class FormCompras : Form
     {
-        FABRICA F = new FABRICA();
         public FormCompras()
         {
             InitializeComponent();
         }
+        //CONEXION SQL
         SqlConnection Conect = new SqlConnection(ConfigurationManager.ConnectionStrings["TIENDA.Properties.Settings.conexion"].ConnectionString);
-        private void comprasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.comprasBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.pRODUCTOSDataSet);
-
-        }
-
+        //EVENTO LOAD PARA EL FORMULARIO COMPRAS
         private void FormCompras_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'pRODUCTOSDataSet.Compras' Puede moverla o quitarla según sea necesario.
+            // TODO: esta línea de código carga datos en la tabla 'pRODUCTOSDataSet.Compras'.
             this.comprasTableAdapter.Fill(this.pRODUCTOSDataSet.Compras);
 
         }
-
+        //EVENTO BOTON AGREGAR
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            //ABRE CONEXION SQL
             Conect.Open();
             try
             {
-                PRODUCTO p = new PRODUCTO(); //de la Interfaz a la Memoria
-
-                p.Codigo = int.Parse(txtCodigo.Text);
+                //CREA UN OBJETO
+                PRODUCTO p = new PRODUCTO();
+                //ALMACENA LOS DATOS DENTRO DEL OBJETO
+                p.Codigo = int.Parse(txtCodigoProducto.Text);
                 p.Nombre = txtNombreProducto.Text;
                 p.Marca = txtMarca.Text;
                 p.PrecioCompra = decimal.Parse(txtPrecioCompra.Text);
                 p.Cantidad = int.Parse(txtCantidad.Text);
-
+                //AGREGA LOS DATOS A LA TABLA COMPRAS
                 comprasTableAdapter.InsertarCompras(p.Codigo, p.Nombre, p.Marca, p.PrecioCompra, p.Cantidad);
-                SqlCommand SumarCantidad = new SqlCommand("UPDATE Productos SET Cantidad = Cantidad +" + p.Cantidad + "WHERE Codigo =" +p.Codigo, Conect);
+                //COMANDO SQL PARA ACTUALIZAR LAS EXISTENCIAS DE LA TABLA PRODUCTOS
+                SqlCommand SumarCantidad = new SqlCommand("UPDATE Productos SET Cantidad = Cantidad +" + p.Cantidad + "WHERE [Codigo de Producto] =" + p.Codigo, Conect);
+                //EJECUTA EL COMANDO PARA AZTUALIZAR LA TABLA PRODUCTOS
                 SumarCantidad.ExecuteNonQuery();
-                // TODO: esta línea de código carga datos en la tabla 'pRODUCTOSDataSet.Compras' Puede moverla o quitarla según sea necesario.
+                //CARGA LOS DATOS EN LA TABLA COMPRAS
                 this.comprasTableAdapter.Fill(this.pRODUCTOSDataSet.Compras);
             }
 
             catch (Exception ex)
             {
+                //MENSAJE DE ERROR
                 MessageBox.Show(ex.Message);
             }
+            //CIERRA CONEXION SQL
             Conect.Close();
         }
-
-        private void comprasBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.comprasBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.pRODUCTOSDataSet);
-
-        }
+        //EVENTO PARA TXTCODIGO AGREGA AUTOMATICAMENTE LOS DATOS DEL PRODUCTO SI YA ESTA REGISTRADO
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
-            if(txtCodigo.Text != string.Empty)
+            //VERIFICA SI TXTCODIGO NO ESTA VACIO
+            if(txtCodigoProducto.Text != string.Empty)
             {
+                //ABRE CONEXION SQL
                 Conect.Open();
-                SqlCommand Buscar = new SqlCommand("SELECT [Nombre del Producto], Marca FROM Productos WHERE Codigo =" + int.Parse(txtCodigo.Text), Conect);
+                //COMANDO BUSCAR
+                SqlCommand Buscar = new SqlCommand("SELECT [Nombre del Producto], Marca FROM Productos WHERE [Codigo de Producto] =" + int.Parse(txtCodigoProducto.Text), Conect);
+                //LECTOR SQL
                 SqlDataReader lector = Buscar.ExecuteReader();
-
+                //VERIFICA SI EL LECTOR CONTIENE FILAS
                 if (lector.Read())
                 {
+                    //LLENAN LOS TEXTBOX CORRESPONDIENTES A CADA DATO
                     txtNombreProducto.Text = lector["Nombre del Producto"].ToString();
                     txtMarca.Text = lector["Marca"].ToString();
-                    Conect.Close();
                 }
+                //SI NO CONTIENE FILAS
                 else
                 {
+                    //MENSAJE DE ERROR
                     MessageBox.Show("Codigo de producto no existe");
-                    txtCodigo.Text = string.Empty;
-                    Conect.Close();
+                    //BORRA EL CONTENIDO DE TXTCODIGO
+                    txtCodigoProducto.Text = string.Empty;
                 }
             }
+            //CIERRA CONEXION SQL
             Conect.Close();
         }
     }
