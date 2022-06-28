@@ -63,7 +63,6 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.ComprasTableAdapter = null;
             this.tableAdapterManager.ProductosTableAdapter = null;
-            this.tableAdapterManager.ReciboTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = TIENDA.PRODUCTOSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VentasTableAdapter = this.ventasTableAdapter;
             // 

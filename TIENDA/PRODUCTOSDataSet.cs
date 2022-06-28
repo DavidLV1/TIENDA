@@ -4,6 +4,17 @@
 
     partial class PRODUCTOSDataSet
     {
+        partial class ComprasDataTable
+        {
+        }
+
+        partial class ProductosDataTable
+        {
+        }
+
+        partial class DataTable1DataTable
+        {
+        }
     }
 }
 
