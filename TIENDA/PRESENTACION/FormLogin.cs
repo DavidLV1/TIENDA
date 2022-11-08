@@ -63,8 +63,7 @@ namespace TIENDA.PRESENTACION
         {
             //CREAR OBJETO DEL FORMULARIO PRINCIPAL
             Form1 form = new Form1();
-            //CREA OBJETO DEL FORMULARIO BIENVENIDA
-            FormBienvenida Bienvenida = new FormBienvenida(form);
+            string Usuario;
             //VALIDACION DE ESPACIOS VACIOS
             if (txtUsuario.Text != string.Empty && txtContraseña.Text != string.Empty)
             {
@@ -86,6 +85,9 @@ namespace TIENDA.PRESENTACION
                         //VALIDACION SI LOS DATOS PARA EL LOGIN COINSIDEN
                         if (lector.Read())
                         {
+                            Usuario = txtUsuario.Text;
+                            //CREA OBJETO DEL FORMULARIO BIENVENIDA
+                            FormBienvenida Bienvenida = new FormBienvenida(form, Usuario);
                             //CIERRA LA CONEXION A LA BASE DE DATOS
                             Conect.Close();
                             //OCULTA EL FORMULARIO LOGIN
@@ -146,12 +148,18 @@ namespace TIENDA.PRESENTACION
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-
         private void FormLogin_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         //FIN
+        private void Enter_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.Equals(Convert.ToChar(13)))
+            {
+                btnAcceder_Click(sender, e);
+            }
+        }
     }
 }

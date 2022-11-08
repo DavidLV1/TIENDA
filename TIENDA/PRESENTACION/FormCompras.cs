@@ -62,6 +62,7 @@ namespace TIENDA.PRESENTACION
             //CIERRA CONEXION SQL
             Conect.Close();
         }
+        //VALIDACIONES
         //EVENTO PARA TXTCODIGO AGREGA AUTOMATICAMENTE LOS DATOS DEL PRODUCTO SI YA ESTA REGISTRADO
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
@@ -93,6 +94,74 @@ namespace TIENDA.PRESENTACION
             //CIERRA CONEXION SQL
             Conect.Close();
         }
+        //EVENTO KEYPRESS
+        private void txtCodigoProducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtPrecioCompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        //FIN VALIDACIONES
     }
 }
 

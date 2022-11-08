@@ -37,13 +37,11 @@
             this.pLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pMenu = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnPagos = new System.Windows.Forms.Button();
-            this.btnEstadisticas = new System.Windows.Forms.Button();
+            this.btnClientes = new System.Windows.Forms.Button();
             this.btnComprar = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
@@ -159,28 +157,18 @@
             // pMenu
             // 
             this.pMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.pMenu.Controls.Add(this.panel10);
             this.pMenu.Controls.Add(this.panel8);
             this.pMenu.Controls.Add(this.panel6);
             this.pMenu.Controls.Add(this.panel4);
             this.pMenu.Controls.Add(this.panel2);
-            this.pMenu.Controls.Add(this.btnPagos);
-            this.pMenu.Controls.Add(this.btnEstadisticas);
+            this.pMenu.Controls.Add(this.btnClientes);
             this.pMenu.Controls.Add(this.btnComprar);
             this.pMenu.Controls.Add(this.btnVentas);
             this.pMenu.Controls.Add(this.btnProductos);
             this.pMenu.Location = new System.Drawing.Point(0, 180);
             this.pMenu.Name = "pMenu";
-            this.pMenu.Size = new System.Drawing.Size(173, 287);
+            this.pMenu.Size = new System.Drawing.Size(173, 231);
             this.pMenu.TabIndex = 1;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
-            this.panel10.Location = new System.Drawing.Point(3, 231);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(7, 50);
-            this.panel10.TabIndex = 2;
             // 
             // panel8
             // 
@@ -214,40 +202,26 @@
             this.panel2.Size = new System.Drawing.Size(7, 50);
             this.panel2.TabIndex = 2;
             // 
-            // btnPagos
+            // btnClientes
             // 
-            this.btnPagos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPagos.FlatAppearance.BorderSize = 0;
-            this.btnPagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
-            this.btnPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagos.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnPagos.Location = new System.Drawing.Point(3, 231);
-            this.btnPagos.Name = "btnPagos";
-            this.btnPagos.Size = new System.Drawing.Size(167, 50);
-            this.btnPagos.TabIndex = 0;
-            this.btnPagos.Text = "CARTERA DE CLIENTE";
-            this.btnPagos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPagos.UseVisualStyleBackColor = true;
-            this.btnPagos.Click += new System.EventHandler(this.btnCarteraCliente_Click);
-            // 
-            // btnEstadisticas
-            // 
-            this.btnEstadisticas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEstadisticas.FlatAppearance.BorderSize = 0;
-            this.btnEstadisticas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
-            this.btnEstadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstadisticas.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnEstadisticas.Location = new System.Drawing.Point(3, 175);
-            this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(167, 50);
-            this.btnEstadisticas.TabIndex = 0;
-            this.btnEstadisticas.Text = "ESTADISTICAS";
-            this.btnEstadisticas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEstadisticas.UseVisualStyleBackColor = true;
-            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
+            this.btnClientes.BackColor = System.Drawing.Color.Transparent;
+            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnClientes.Location = new System.Drawing.Point(3, 175);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(167, 50);
+            this.btnClientes.TabIndex = 0;
+            this.btnClientes.Text = "CLIENTES";
+            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnCarteraCliente_Click);
             // 
             // btnComprar
             // 
+            this.btnComprar.BackColor = System.Drawing.Color.Transparent;
             this.btnComprar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnComprar.FlatAppearance.BorderSize = 0;
             this.btnComprar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
@@ -259,11 +233,12 @@
             this.btnComprar.TabIndex = 0;
             this.btnComprar.Text = "COMPRAS";
             this.btnComprar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnComprar.UseVisualStyleBackColor = true;
+            this.btnComprar.UseVisualStyleBackColor = false;
             this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
             // btnVentas
             // 
+            this.btnVentas.BackColor = System.Drawing.Color.Transparent;
             this.btnVentas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVentas.FlatAppearance.BorderSize = 0;
             this.btnVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
@@ -275,11 +250,12 @@
             this.btnVentas.TabIndex = 0;
             this.btnVentas.Text = "VENTAS";
             this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnVentas.UseVisualStyleBackColor = true;
+            this.btnVentas.UseVisualStyleBackColor = false;
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
             // btnProductos
             // 
+            this.btnProductos.BackColor = System.Drawing.Color.Transparent;
             this.btnProductos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProductos.FlatAppearance.BorderSize = 0;
             this.btnProductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
@@ -291,7 +267,7 @@
             this.btnProductos.TabIndex = 0;
             this.btnProductos.Text = "PRODUCTOS";
             this.btnProductos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnProductos.UseVisualStyleBackColor = true;
+            this.btnProductos.UseVisualStyleBackColor = false;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // pPrincipal
@@ -322,6 +298,8 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CategoriaTableAdapter = null;
+            this.tableAdapterManager.ClientesTableAdapter = null;
             this.tableAdapterManager.ComprasTableAdapter = null;
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.ProductosTableAdapter = null;
@@ -371,9 +349,7 @@
         private System.Windows.Forms.Panel pMenu;
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnProductos;
-        private System.Windows.Forms.Button btnEstadisticas;
         private System.Windows.Forms.Button btnComprar;
-        private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel4;
@@ -381,7 +357,7 @@
         private System.Windows.Forms.BindingSource productosBindingSource;
         private PRODUCTOSDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Panel pPrincipal;
-        private System.Windows.Forms.Button btnPagos;
+        private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnLogout;
     }
 }

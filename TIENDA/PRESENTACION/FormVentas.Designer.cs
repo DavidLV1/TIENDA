@@ -120,6 +120,7 @@
             this.txtCodigoProducto.Size = new System.Drawing.Size(100, 22);
             this.txtCodigoProducto.TabIndex = 2;
             this.txtCodigoProducto.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
+            this.txtCodigoProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoProducto_KeyPress);
             // 
             // ventasBindingSource
             // 
@@ -153,6 +154,7 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 22);
             this.txtPrecio.TabIndex = 8;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // txtCantidad
             // 
@@ -160,6 +162,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 22);
             this.txtCantidad.TabIndex = 10;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // btnAgregar
             // 
@@ -189,7 +192,6 @@
             this.btnFactura.TabIndex = 14;
             this.btnFactura.Text = "Factura";
             this.btnFactura.UseVisualStyleBackColor = false;
-            this.btnFactura.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblFactura
             // 
@@ -208,6 +210,7 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CategoriaTableAdapter = null;
             this.tableAdapterManager.ClientesTableAdapter = null;
             this.tableAdapterManager.ComprasTableAdapter = null;
             this.tableAdapterManager.ProductosTableAdapter = null;
@@ -303,14 +306,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.TextBox txtCodigoProducto;
         private System.Windows.Forms.TextBox txtNombreProducto;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.Button btnFactura;
         private System.Windows.Forms.Label lblFactura;
         private PRODUCTOSDataSet pRODUCTOSDataSet;

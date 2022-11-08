@@ -41,7 +41,7 @@ namespace TIENDA.PRESENTACION
                 p.Codigo = int.Parse(txtCodigoProducto.Text);
                 p.Nombre = txtNombreProducto.Text;
                 p.Marca = txtMarca.Text;
-                p.PrecioCompra = decimal.Parse(txtPrecio.Text);
+                p.Precio = decimal.Parse(txtPrecio.Text);
                 p.Cantidad = int.Parse(txtCantidad.Text);
                 //AGREGA LOS DATOS A LA TABLA COMPRAS
                 ventasTableAdapter.InsertarVentas(p.Codigo, p.Nombre, p.Cantidad, p.Marca, p.Precio);
@@ -91,6 +91,76 @@ namespace TIENDA.PRESENTACION
             }
             //CIERRA CONEXION SQL
             Conect.Close();
+        }
+        //VALIDACIONES
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCodigoProducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+            //FIN VALIDACIONES
         }
     }
 }

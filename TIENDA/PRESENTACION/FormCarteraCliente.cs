@@ -24,12 +24,41 @@ namespace TIENDA.PRESENTACION
 
         }
 
-        private void clientesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.clientesBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.pRODUCTOSDataSet);
+            try
+            {
+                clientesTableAdapter.InsertarCliente(int.Parse(txtCodigoCliente.Text), txtNombreCliente.Text);
+                this.clientesTableAdapter.Fill(this.pRODUCTOSDataSet.Clientes);
+            }
 
+            catch
+            {
+                MessageBox.Show("Codigo de cliente ya existe");
+            }
+        }
+
+        private void txtCodigoCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }
