@@ -92,12 +92,6 @@
     <Compile Include="PRESENTACION\FormCarteraCliente.Designer.cs">
       <DependentUpon>FormCarteraCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="PRESENTACION\FormEstadisticas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PRESENTACION\FormEstadisticas.Designer.cs">
-      <DependentUpon>FormEstadisticas.cs</DependentUpon>
-    </Compile>
     <Compile Include="PRESENTACION\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,9 +131,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENTACION\FormCarteraCliente.resx">
       <DependentUpon>FormCarteraCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PRESENTACION\FormEstadisticas.resx">
-      <DependentUpon>FormEstadisticas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENTACION\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

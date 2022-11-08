@@ -26,6 +26,16 @@ namespace TIENDA
         SqlConnection Conect = new SqlConnection(ConfigurationManager.ConnectionStrings["TIENDA.Properties.Settings.conexion"].ConnectionString);
         private void FormProductos_Load(object sender, EventArgs e)
         {
+            Conect.Open();
+            SqlCommand GetCategoria = new SqlCommand("SELECT Categoria FROM Categoria", Conect);
+            DataTable TablaCategoria = new DataTable();
+            SqlDataAdapter adaptador = new SqlDataAdapter(GetCategoria);
+            adaptador.Fill(TablaCategoria);
+
+            cbCategoria.DataSource = TablaCategoria;
+            cbCategoria.DisplayMember = "Categoria";
+            cbCategoria.ValueMember = "Categoria";
+            Conect.Close();
             // TODO: esta línea de código carga datos en la tabla 'pRODUCTOSDataSet.Productos'
             this.productosTableAdapter.Fill(this.pRODUCTOSDataSet.Productos);
         }
@@ -42,7 +52,7 @@ namespace TIENDA
                 p.Marca = txtMarca.Text;
                 p.Precio = decimal.Parse(txtPrecio.Text);
                 p.Cantidad = int.Parse(txtCantidad.Text);
-                p.Categoria = txtCategoria.Text;
+                p.Categoria = cbCategoria.Text;
                 //p.Caducidad = dTPCaducidad.Value.ToString();
                 //SE PASA A LA LISTA (NO SE USA)
                 l.setProducto(p);
@@ -52,6 +62,15 @@ namespace TIENDA
                 MessageBox.Show("Se agrego un nuevo Producto", "Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 // TODO: esta línea de código carga datos en la tabla 'pRODUCTOSDataSet.Productos' 
                 this.productosTableAdapter.Fill(this.pRODUCTOSDataSet.Productos);
+
+                //BORRA EL CONTENIDO DE LOS TEXTBOX
+                txtCodigoProducto.Clear();
+                txtNombreProducto.Clear();
+                txtMarca.Clear();
+                txtPrecio.Clear();
+                txtCantidad.Clear();
+                //BORRA CONTENIDO DEL LABEL
+                lblCodigoProducto3.Text = string.Empty;
             }
 
             catch (Exception ex)
@@ -73,12 +92,21 @@ namespace TIENDA
                 p.Marca = txtMarca.Text;
                 p.Precio = decimal.Parse(txtPrecio.Text);
                 p.Cantidad = int.Parse(txtCantidad.Text);
-                p.Categoria = txtCategoria.Text;
+                p.Categoria = cbCategoria.Text;
                 //ACTUALIZA UN PRODUCTO DE LA BASE DE DATOS
                 productosTableAdapter.Actualizar(p.Codigo, p.Nombre, p.Marca, p.Precio, p.Cantidad, p.Categoria, int.Parse(lblCodigoProducto3.Text));
                 MessageBox.Show("Se actualizado un Producto", "Actualizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 // TODO: esta línea de código carga datos en la tabla 'pRODUCTOSDataSet.Productos' Puede moverla o quitarla según sea necesario.
                 this.productosTableAdapter.Fill(this.pRODUCTOSDataSet.Productos);
+
+                //BORRA EL CONTENIDO DE LOS TEXTBOX
+                txtCodigoProducto.Clear();
+                txtNombreProducto.Clear();
+                txtMarca.Clear();
+                txtPrecio.Clear();
+                txtCantidad.Clear();
+                //BORRA CONTENIDO DEL LABEL
+                lblCodigoProducto3.Text = string.Empty;
             }
 
             catch (Exception ex)
@@ -87,7 +115,7 @@ namespace TIENDA
                 MessageBox.Show(ex.Message);
             }
         }
-
+        //EVENTO BOTON ELIMINAR
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
@@ -104,19 +132,30 @@ namespace TIENDA
                 MessageBox.Show(ex.Message);
             }
         }
-        //EVENTO BOTON NUEVO
-        private void btnNuevo_Click(object sender, EventArgs e)
+        //EVENTO BOTON AGREGAR CATEGORIA
+        private void btnAgregarCategoria_Click(object sender, EventArgs e)
         {
-            //BORRA EL CONTENIDO DE LOS TEXTBOX
-            txtCodigoProducto.Clear();
-            txtNombreProducto.Clear();
-            txtMarca.Clear();
-            txtPrecio.Clear();
-            txtCantidad.Clear();
-            txtCategoria.Clear();
-            //BORRA CONTENIDO DEL LABEL
-            lblCodigoProducto3.Text = string.Empty;
+            try
+            {
+                Conect.Open();
+                SqlCommand AddCategoria = new SqlCommand("INSERT INTO Categoria (Categoria) VALUES ('" + txtNuevaCategoria.Text + "');", Conect);
+                SqlCommand GetCategoria = new SqlCommand("SELECT Categoria FROM Categoria", Conect);
+                AddCategoria.ExecuteNonQuery();
+                DataTable TablaCategoria = new DataTable();
+                SqlDataAdapter adaptador = new SqlDataAdapter(GetCategoria);
+                adaptador.Fill(TablaCategoria);
+
+                cbCategoria.DataSource = TablaCategoria;
+                cbCategoria.DisplayMember = "Categoria";
+                cbCategoria.ValueMember = "Categoria";
+            }
+            catch
+            {
+                MessageBox.Show("La categoria ya existe");
+            }
+            Conect.Close();
         }
+        //VALIDACIONES
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
             //VERIFICA SI TXTCODIGO NO ESTA VACIO
@@ -138,8 +177,18 @@ namespace TIENDA
                         txtMarca.Text = lector["Marca"].ToString();
                         txtPrecio.Text = lector["Precio"].ToString();
                         txtCantidad.Text = lector["Cantidad"].ToString();
-                        txtCategoria.Text = lector["Categoria"].ToString();
                         lblCodigoProducto3.Text = lector["Codigo de Producto"].ToString();
+                    }
+
+                    else
+                    {
+                        //BORRA EL CONTENIDO DE LOS TEXTBOX
+                        txtNombreProducto.Clear();
+                        txtMarca.Clear();
+                        txtPrecio.Clear();
+                        txtCantidad.Clear();
+                        //BORRA CONTENIDO DEL LABEL
+                        lblCodigoProducto3.Text = string.Empty;
                     }
                 }
 
@@ -152,5 +201,91 @@ namespace TIENDA
             //CIERRA CONEXION SQL
             Conect.Close();
         }
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtCodigoProducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtNuevaCategoria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if ((e.KeyChar) == ' ')
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        //FIN VALIDACIONES
     }
 }

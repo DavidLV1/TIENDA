@@ -36,14 +36,10 @@
             System.Windows.Forms.Label lblCantidad;
             System.Windows.Forms.Label lblCategoria;
             System.Windows.Forms.Label lblCodigoProducto2;
+            System.Windows.Forms.Label lblNuevaCategoria;
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.pRODUCTOSDataSet = new TIENDA.PRODUCTOSDataSet();
-            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productosTableAdapter = new TIENDA.PRODUCTOSDataSetTableAdapters.ProductosTableAdapter();
-            this.tableAdapterManager = new TIENDA.PRODUCTOSDataSetTableAdapters.TableAdapterManager();
             this.productosDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,13 +47,20 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pRODUCTOSDataSet = new TIENDA.PRODUCTOSDataSet();
             this.txtCodigoProducto = new System.Windows.Forms.TextBox();
             this.txtNombreProducto = new System.Windows.Forms.TextBox();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.lblCodigoProducto3 = new System.Windows.Forms.Label();
+            this.txtNuevaCategoria = new System.Windows.Forms.TextBox();
+            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAgregarCategoria = new System.Windows.Forms.Button();
+            this.productosTableAdapter = new TIENDA.PRODUCTOSDataSetTableAdapters.ProductosTableAdapter();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.tableAdapterManager = new TIENDA.PRODUCTOSDataSetTableAdapters.TableAdapterManager();
             lblCodigoProducto = new System.Windows.Forms.Label();
             lblNombreProducto = new System.Windows.Forms.Label();
             lblMarca = new System.Windows.Forms.Label();
@@ -65,9 +68,11 @@
             lblCantidad = new System.Windows.Forms.Label();
             lblCategoria = new System.Windows.Forms.Label();
             lblCodigoProducto2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUCTOSDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
+            lblNuevaCategoria = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.productosDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODUCTOSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigoProducto
@@ -140,6 +145,16 @@
             lblCodigoProducto2.TabIndex = 45;
             lblCodigoProducto2.Text = "Codigo de Producto:";
             // 
+            // lblNuevaCategoria
+            // 
+            lblNuevaCategoria.AutoSize = true;
+            lblNuevaCategoria.ForeColor = System.Drawing.Color.White;
+            lblNuevaCategoria.Location = new System.Drawing.Point(476, 53);
+            lblNuevaCategoria.Name = "lblNuevaCategoria";
+            lblNuevaCategoria.Size = new System.Drawing.Size(120, 16);
+            lblNuevaCategoria.TabIndex = 46;
+            lblNuevaCategoria.Text = "Nuvea Categoria: *";
+            // 
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(100)))));
@@ -149,7 +164,7 @@
             this.btnAgregar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAgregar.Location = new System.Drawing.Point(63, 355);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(80, 29);
+            this.btnAgregar.Size = new System.Drawing.Size(88, 29);
             this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -164,7 +179,7 @@
             this.btnActualizar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnActualizar.Location = new System.Drawing.Point(169, 355);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(80, 29);
+            this.btnActualizar.Size = new System.Drawing.Size(88, 29);
             this.btnActualizar.TabIndex = 13;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -185,45 +200,6 @@
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(100)))));
-            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnNuevo.FlatAppearance.BorderSize = 2;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnNuevo.Location = new System.Drawing.Point(54, 116);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(80, 29);
-            this.btnNuevo.TabIndex = 13;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // pRODUCTOSDataSet
-            // 
-            this.pRODUCTOSDataSet.DataSetName = "PRODUCTOSDataSet";
-            this.pRODUCTOSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productosBindingSource
-            // 
-            this.productosBindingSource.DataMember = "Productos";
-            this.productosBindingSource.DataSource = this.pRODUCTOSDataSet;
-            // 
-            // productosTableAdapter
-            // 
-            this.productosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ClientesTableAdapter = null;
-            this.tableAdapterManager.ComprasTableAdapter = null;
-            this.tableAdapterManager.ProductosTableAdapter = this.productosTableAdapter;
-            this.tableAdapterManager.UpdateOrder = TIENDA.PRODUCTOSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UsuariosTableAdapter = null;
-            this.tableAdapterManager.VentasTableAdapter = null;
-            // 
             // productosDataGridView
             // 
             this.productosDataGridView.AutoGenerateColumns = false;
@@ -237,7 +213,7 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.productosDataGridView.DataSource = this.productosBindingSource;
-            this.productosDataGridView.Location = new System.Drawing.Point(292, 70);
+            this.productosDataGridView.Location = new System.Drawing.Point(292, 116);
             this.productosDataGridView.Name = "productosDataGridView";
             this.productosDataGridView.RowHeadersWidth = 51;
             this.productosDataGridView.RowTemplate.Height = 24;
@@ -286,6 +262,16 @@
             this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
+            // productosBindingSource
+            // 
+            this.productosBindingSource.DataMember = "Productos";
+            this.productosBindingSource.DataSource = this.pRODUCTOSDataSet;
+            // 
+            // pRODUCTOSDataSet
+            // 
+            this.pRODUCTOSDataSet.DataSetName = "PRODUCTOSDataSet";
+            this.pRODUCTOSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // txtCodigoProducto
             // 
             this.txtCodigoProducto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "Codigo de Producto", true));
@@ -294,6 +280,7 @@
             this.txtCodigoProducto.Size = new System.Drawing.Size(100, 22);
             this.txtCodigoProducto.TabIndex = 35;
             this.txtCodigoProducto.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
+            this.txtCodigoProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoProducto_KeyPress);
             // 
             // txtNombreProducto
             // 
@@ -318,6 +305,7 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 22);
             this.txtPrecio.TabIndex = 41;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // txtCantidad
             // 
@@ -326,14 +314,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 22);
             this.txtCantidad.TabIndex = 43;
-            // 
-            // txtCategoria
-            // 
-            this.txtCategoria.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "Categoria", true));
-            this.txtCategoria.Location = new System.Drawing.Point(177, 311);
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(100, 22);
-            this.txtCategoria.TabIndex = 45;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // lblCodigoProducto3
             // 
@@ -344,12 +325,68 @@
             this.lblCodigoProducto3.Size = new System.Drawing.Size(47, 50);
             this.lblCodigoProducto3.TabIndex = 46;
             // 
+            // txtNuevaCategoria
+            // 
+            this.txtNuevaCategoria.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "Categoria", true));
+            this.txtNuevaCategoria.Location = new System.Drawing.Point(602, 50);
+            this.txtNuevaCategoria.Name = "txtNuevaCategoria";
+            this.txtNuevaCategoria.Size = new System.Drawing.Size(100, 22);
+            this.txtNuevaCategoria.TabIndex = 47;
+            this.txtNuevaCategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNuevaCategoria_KeyPress);
+            // 
+            // categoriaBindingSource
+            // 
+            this.categoriaBindingSource.DataMember = "Categoria";
+            this.categoriaBindingSource.DataSource = this.pRODUCTOSDataSet;
+            // 
+            // btnAgregarCategoria
+            // 
+            this.btnAgregarCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(100)))));
+            this.btnAgregarCategoria.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnAgregarCategoria.FlatAppearance.BorderSize = 2;
+            this.btnAgregarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarCategoria.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAgregarCategoria.Location = new System.Drawing.Point(708, 47);
+            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
+            this.btnAgregarCategoria.Size = new System.Drawing.Size(165, 29);
+            this.btnAgregarCategoria.TabIndex = 13;
+            this.btnAgregarCategoria.Text = "Agregar Categoria";
+            this.btnAgregarCategoria.UseVisualStyleBackColor = false;
+            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
+            // 
+            // productosTableAdapter
+            // 
+            this.productosTableAdapter.ClearBeforeFill = true;
+            // 
+            // cbCategoria
+            // 
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Location = new System.Drawing.Point(177, 311);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(100, 24);
+            this.cbCategoria.TabIndex = 48;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CategoriaTableAdapter = null;
+            this.tableAdapterManager.ClientesTableAdapter = null;
+            this.tableAdapterManager.ComprasTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.ProductosTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = TIENDA.PRODUCTOSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsuariosTableAdapter = null;
+            this.tableAdapterManager.VentasTableAdapter = null;
+            // 
             // FormProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(15)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(1087, 581);
+            this.Controls.Add(this.cbCategoria);
+            this.Controls.Add(lblNuevaCategoria);
+            this.Controls.Add(this.txtNuevaCategoria);
             this.Controls.Add(lblCodigoProducto2);
             this.Controls.Add(this.lblCodigoProducto3);
             this.Controls.Add(lblCodigoProducto);
@@ -363,32 +400,29 @@
             this.Controls.Add(lblCantidad);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(lblCategoria);
-            this.Controls.Add(this.txtCategoria);
             this.Controls.Add(this.productosDataGridView);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
-            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.btnAgregarCategoria);
             this.Controls.Add(this.btnAgregar);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormProductos";
             this.Text = "FormProductos";
             this.Load += new System.EventHandler(this.FormProductos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUCTOSDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODUCTOSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private PRODUCTOSDataSet pRODUCTOSDataSet;
         private System.Windows.Forms.BindingSource productosBindingSource;
         private PRODUCTOSDataSetTableAdapters.ProductosTableAdapter productosTableAdapter;
@@ -405,7 +439,10 @@
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.Label lblCodigoProducto3;
+        private System.Windows.Forms.BindingSource categoriaBindingSource;
+        private System.Windows.Forms.TextBox txtNuevaCategoria;
+        private System.Windows.Forms.Button btnAgregarCategoria;
+        private System.Windows.Forms.ComboBox cbCategoria;
     }
 }

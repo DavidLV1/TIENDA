@@ -133,6 +133,7 @@
             this.txtCodigoProducto.Size = new System.Drawing.Size(100, 22);
             this.txtCodigoProducto.TabIndex = 16;
             this.txtCodigoProducto.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
+            this.txtCodigoProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoProducto_KeyPress);
             // 
             // comprasBindingSource
             // 
@@ -166,6 +167,7 @@
             this.txtPrecioCompra.Name = "txtPrecioCompra";
             this.txtPrecioCompra.Size = new System.Drawing.Size(100, 22);
             this.txtPrecioCompra.TabIndex = 22;
+            this.txtPrecioCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioCompra_KeyPress);
             // 
             // txtCantidad
             // 
@@ -173,6 +175,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 22);
             this.txtCantidad.TabIndex = 24;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // comprasTableAdapter
             // 
@@ -181,6 +184,7 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CategoriaTableAdapter = null;
             this.tableAdapterManager.ClientesTableAdapter = null;
             this.tableAdapterManager.ComprasTableAdapter = this.comprasTableAdapter;
             this.tableAdapterManager.ProductosTableAdapter = null;
@@ -273,9 +277,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.TextBox txtCodigoProducto;
         private System.Windows.Forms.TextBox txtNombreProducto;
         private System.Windows.Forms.TextBox txtMarca;

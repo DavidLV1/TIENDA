@@ -128,26 +128,37 @@ namespace TIENDA
         private void btnProductos_Click(object sender, EventArgs e)
         {
             loadForm(new FormProductos());
+            btnProductos.BackColor = Color.Navy;
+            btnVentas.BackColor = Color.Transparent;
+            btnComprar.BackColor = Color.Transparent;
+            btnClientes.BackColor = Color.Transparent;
         }
         //BOTON VENTAS
         private void btnVentas_Click(object sender, EventArgs e)
         {
             loadForm(new FormVentas());
+            btnVentas.BackColor = Color.Navy;
+            btnProductos.BackColor = Color.Transparent;
+            btnComprar.BackColor = Color.Transparent;
+            btnClientes.BackColor = Color.Transparent;
         }
         //BOTON COMPRAS
         private void btnComprar_Click(object sender, EventArgs e)
         {
             loadForm(new FormCompras());
-        }
-        //BOTON ESTADISTICAS
-        private void btnEstadisticas_Click(object sender, EventArgs e)
-        {
-            loadForm(new FormEstadisticas());
+            btnComprar.BackColor = Color.Navy;
+            btnProductos.BackColor = Color.Transparent;
+            btnVentas.BackColor = Color.Transparent;
+            btnClientes.BackColor = Color.Transparent;
         }
         //BOTON CARTERA DE CLIENTE
         private void btnCarteraCliente_Click(object sender, EventArgs e)
         {
             loadForm(new FormCarteraCliente());
+            btnClientes.BackColor = Color.Navy;
+            btnComprar.BackColor = Color.Transparent;
+            btnProductos.BackColor = Color.Transparent;
+            btnVentas.BackColor = Color.Transparent;
         }
         //FIN EVENTOS MOSTRAR FORMULARIOS
         //EVENTO BOTON LOGOUT

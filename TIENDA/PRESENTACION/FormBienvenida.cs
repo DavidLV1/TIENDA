@@ -13,16 +13,18 @@ namespace TIENDA.PRESENTACION
     public partial class FormBienvenida : Form
     {
         Form form;
-        public FormBienvenida(object f)
+        string Usuario;
+        public FormBienvenida(object f, string usuario)
         {
             InitializeComponent();
 
             form = f as Form;
+            Usuario = usuario;
         }
         //EVENTO LOAD PARA EL FORMULARIO BIENVENIDA
         private void FormBienvenida_Load(object sender, EventArgs e)
         {
-            lblNombreUsuario.Text = "David";
+            lblNombreUsuario.Text = Usuario;
             //OPACIDAD EN 0
             this.Opacity = 0.0;
             //INICIA EL TIMER 1
